@@ -5,8 +5,10 @@ A recent and very interesting paper by Mike Mahoney and Charles Martin looked at
 However, as a practical improvement, lowering the batch size has limited use. With a batch size of 64, the mini-AlexNet model takes roughly six seconds to complete an epoch on a GTX 1080 GPU. With a batch size of 2, which produced the most heavy-tailed empirical spectral distribution, it would take several minutes to complete an epoch. Thus, one might wonder what else affects the spectral weight distributions.
   
 The most natural hyper-parameter to vary instead of batch size is learning rate. However, we expect the affect to be inverse. Lowering the batch size will increase the noise in the weight updates. For learning rate, it is increasing the learning rate that has this affect. The code in this repo can be used to traing a mini-AlexNet model with varying batch size or learning rate, and then, to analyze the resulting weight matrices.
-
   
+Below are the empirical spectral distributions of the first fully connected layer in the mini-AlexNet model, after training for 100 epochs, with batch size 64 and respective learning rates 0.00256
+
+![alt text](Images/Stage 1. Randomlike/64.00256.png)
 
 ## Prerequisites
 
