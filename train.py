@@ -106,7 +106,7 @@ if __name__ == '__main__':
   # 0.01.6 and 0.01.1 need to be redone... fml
   with tf.device('/device:GPU:' + args.device_id):
     if len(args.batch_sizes) == 1:
-      for lr in [0.32]:#[0.00128, 0.00256, 0.0064, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32]:
+      for lr in [0.00128, 0.00256, 0.0064, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32]:
         args.learning_rate = lr
         ensemble_experiment(args, MyModel)
     else:
