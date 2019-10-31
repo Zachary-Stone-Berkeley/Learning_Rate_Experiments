@@ -14,7 +14,7 @@ Below are the empirical spectral distributions of the first fully connected laye
 ![alt text](Images/Stage%204.%20Bulk%20Decay/64.08.png)
 ![alt text](Images/Stage%205.%20Heavy%20Tailed/64.16.png)
 
-As observed by Mahoney and Martin, it is the models with more heavy-tailed empirical spectral distributions that generalize better. The mini-AlexNet model with learning rate 0.00128, 0.01, and 0.16 achieves best test accuracy 71%, 74.5%, 78.0%. (Training accuracies are 98%, 100%, 100%.) If we interpret temperature parameters like batch size and learning rate as regularizers, then we may wonder if large models benefit more from higher learning rate or smaller batch size than smaller models. With the mini-AlexNet model, increasing learning rate from 0.01 to 0.16 increases test accuracy by roughly 3%. But what of a model where the number of convolution channels and neurons in dense layers is reduced to one-fourth? 
+As observed by Mahoney and Martin, it is the models with more heavy-tailed empirical spectral distributions that generalize better. The mini-AlexNet model with learning rate 0.00128, 0.01, and 0.16 achieves best test accuracy 71%, 74.5%, 78.0% (training accuracies are 98%, 100%, 100%). 
 
 ## Prerequisites
 
