@@ -4,15 +4,17 @@ A recent and very interesting paper by Mike Mahoney and Charles Martin looked at
   
 However, as a practical improvement, lowering the batch size has limited use. With a batch size of 64, the mini-AlexNet model takes roughly six seconds to complete an epoch on a GTX 1080 GPU. With a batch size of 2, which produced the most heavy-tailed empirical spectral distribution, it would take several minutes to complete an epoch. Thus, one might wonder what else affects the spectral weight distributions.
   
-The most natural hyper-parameter to vary instead of batch size is learning rate. However, we expect the affect to be inverse. Lowering the batch size will increase the noise in the weight updates. For learning rate, it is increasing the learning rate that has this affect. The code in this repo can be used to traing a mini-AlexNet model with varying batch size or learning rate, and then, to analyze the resulting weight matrices.
+The most natural hyper-parameter to vary instead of batch size is learning rate. However, we expect the effect to be inverse. Lowering the batch size will increase the noise in the weight updates. For learning rate, it is an increase that adds noise to the weight updates. The code in this repo can be used to traing a mini-AlexNet model with varying batch size or learning rate, and then, to analyze the resulting weight matrices.
   
-Below are the empirical spectral distributions of the first fully connected layer in the mini-AlexNet model, after training for 100 epochs, with batch size 64 and respective learning rates 0.00256, 0.01, 0.02, 0.08, and 0.16 which corrospond to randomlike, bleeding out, bulk+spike, bulk-decay, and heavy-tailed distributions.
+Below are the empirical spectral distributions of the first fully connected layer in the mini-AlexNet model, after training for 100 epochs, with batch size 64 and respective learning rates 0.00128, 0.01, 0.02, 0.08, and 0.16 which corrospond to randomlike, bleeding out, bulk+spike, bulk-decay, and heavy-tailed distributions.
 
-![alt text](Images/Stage%201.%20Randomlike/64.00256.png)
+![alt text](Images/Stage%201.%20Randomlike/64.00128.png)
 ![alt text](Images/Stage%202.%20Bleeding%20Out/64.01.png)
 ![alt text](Images/Stage%203.%20Bulk%20%2B%20Spikes/64.02.png)
 ![alt text](Images/Stage%204.%20Bulk%20Decay/64.08.png)
 ![alt text](Images/Stage%205.%20Heavy%20Tailed/64.16.png)
+
+As observed by Mahoney and Martin, it is the models with more heavy-tailed empirical spectral distributions that generalize better. The mini-AlexNet model with learning rate 0.00128, 0.01, and 0.16 achieves best test accuracy 71%, 74.5%, 78.0%. (Training accuracies are 98%, 100%, 100%.) If we interpret temperature parameters like batch size and learning rate as regularizers, then we may wonder if large models benefit more from higher learning rate or smaller batch size than smaller models. With the mini-AlexNet model, increasing learning rate from 0.01 to 0.16 increases test accuracy by roughly 3%. But what of a model where the number of convolution channels and neurons in dense layers is reduced to one-fourth? 
 
 ## Prerequisites
 
