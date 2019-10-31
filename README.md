@@ -8,7 +8,7 @@ The most natural hyper-parameter to vary instead of batch size is learning rate.
   
 Below are the empirical spectral distributions of the first fully connected layer in the mini-AlexNet model, after training for 100 epochs, with batch size 64 and respective learning rates 0.00256
 
-![alt text](Images/Stage 1. Randomlike/64.00256.png)
+![alt text](5Stages/Images/Stage 1. Randomlike/64.00256.png)
 
 ## Prerequisites
 
